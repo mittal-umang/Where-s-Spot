@@ -360,13 +360,13 @@
     text-align: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
     text-transform: uppercase;
-    top: 100px;
+    top: 250px;
     z-index: 3;
 
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 306px;
+    width: 1200px;
     height: 0;
 }
 .blurred-container .motto .border{
