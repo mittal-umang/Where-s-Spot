@@ -1880,7 +1880,7 @@ $('#myTab a').click(function (e) {
 });
 
 $(function () {
-$('#myTab a:last').tab('show');
+$('#myTab a:first').tab('show');
 });
 
 /* ========================================================================

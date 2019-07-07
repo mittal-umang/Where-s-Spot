@@ -19,6 +19,8 @@
     <!--     Font Awesome     -->
     <link href="{% static "wheresspot/bootstrap3/css/font-awesome.css" %}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+
 </head>
 
 
@@ -40,22 +42,33 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <ul class="nav nav-tabs" id="myTab">
-                        <li class="active col-lg-4 col-md-4 col-sm-4 text-center"><a href="#findBread" >Find Breed</a></li>
+                        <li class="active col-lg-4 col-md-4 col-sm-4 text-center"><a href="#findBreed" >Find Breed</a></li>
                         <li class="col-lg-4 col-md-4 col-sm-4 text-center"><a href="#findDog">Find Dog</a></li>
                         <li class="col-lg-4 col-md-4 col-sm-4 text-center"><a href="#lostDog">Lost Dog</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="findBread">
-                            <div class="container tim-container">
-                                <div class="row ">
-                                    <div class="label label-primary">
-                                        Hello from find Bread
+                        <div class="tab-pane active" id="findBreed">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 margin-top"><br><br><br><br><br><br>
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                            <input type="file" name="myfile">
+                                            <button type="submit">upload</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="text-center"><br>
+                                         {% if uploaded_file_url %}
+                                             <img src="{{ uploaded_file_url }}" alt="Rounded Image" class="img-rounded img-responsive img-dog">
+                                         {% else %}
+                                             <img src="{% static "wheresspot/assets/img/dulau.jpg" %}" alt="Rounded Image" class="img-rounded img-responsive img-dog">
+                                         {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane" id="findDog">
-                                 <div class="container tim-container">
+                             <div class="container tim-container">
                                 <div class="row ">
                                     <div class="label label-primary">
                                         Hello from find Dog
@@ -81,10 +94,7 @@
 </div>
 
 <div id="carousel">
-    <!--
-            IMPORTANT - This carousel can have a special class for a smooth transition "gsdk-transition". Since javascript cannot be overwritten, if you want to use it, you can use the bootstrap.js or bootstrap.min.js from the GSDKit or you can open your bootstrap.js file, search for "emulateTransitionEnd(600)" and change it with "emulateTransitionEnd(1200)"
 
-    -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
