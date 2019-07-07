@@ -20,15 +20,16 @@
     <link href="{% static "wheresspot/bootstrap3/css/font-awesome.css" %}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 </head>
+
+
 <body>
 <div id="navbar-full">
     <div class='blurred-container'>
         <div class="motto">
-            <div>Where's Spot?</div>
+            <div>{{title}}</div>
         </div>
         <div class="img-src" style="background-image: url({% static "wheresspot/assets/img/cover.jpg" %})"></div>
-        <div class='img-src blur'
-             style="background-image: url({% static "wheresspot/assets/img/cover_blur.jpg" %})"></div>
+        <div class='img-src blur' style="background-image: url({% static "wheresspot/assets/img/cover_blur.jpg" %})"></div>
     </div>
 
 </div>
@@ -38,13 +39,40 @@
         <div id="sliders-navigation">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul class="nav nav-tabs">
-                        <li class="active col-lg-4 col-md-4 col-sm-4"><a href="#Bla">Find Breed</a></li>
-                        <li class="col-lg-4 col-md-4 col-sm-4"><a href="#nice">Find Dog</a></li>
-                        `
-                        <li class="col-lg-4 col-md-4 col-sm-4"><a href="#nice">Lost Dog</a></li>
-
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active col-lg-4 col-md-4 col-sm-4 text-center"><a href="#findBread" >Find Breed</a></li>
+                        <li class="col-lg-4 col-md-4 col-sm-4 text-center"><a href="#findDog">Find Dog</a></li>
+                        <li class="col-lg-4 col-md-4 col-sm-4 text-center"><a href="#lostDog">Lost Dog</a></li>
                     </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="findBread">
+                            <div class="container tim-container">
+                                <div class="row ">
+                                    <div class="label label-primary">
+                                        Hello from find Bread
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="findDog">
+                                 <div class="container tim-container">
+                                <div class="row ">
+                                    <div class="label label-primary">
+                                        Hello from find Dog
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="lostDog">
+                                <div class="container tim-container">
+                                <div class="row ">
+                                    <div class="label label-primary">
+                                        Hello from Lost Dog
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <br/>
                 </div>
             </div>
@@ -70,7 +98,6 @@
 {#                </div> <!-- end labels-badges -->#}
     </div>
 </div>
-
 {#<div id="notifications">#}
 {#<!--            De scris la tutorial sa bage in container  -->#}
 {#    <div class="alert alert-success">#}
@@ -336,6 +363,7 @@
 {#        </div>#}
 {#    </div>#}
 {#</div>#}
+
 <div id="carousel">
     <!--
             IMPORTANT - This carousel can have a special class for a smooth transition "gsdk-transition". Since javascript cannot be overwritten, if you want to use it, you can use the bootstrap.js or bootstrap.min.js from the GSDKit or you can open your bootstrap.js file, search for "emulateTransitionEnd(600)" and change it with "emulateTransitionEnd(1200)"
@@ -375,6 +403,7 @@
         </a>
     </div>
 </div> <!-- end carousel -->
+
 {#<div class="main">#}
 {#    <div class="container tim-container">#}
 {#        <div id="extras">#}
