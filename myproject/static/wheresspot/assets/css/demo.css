@@ -398,3 +398,12 @@
     display: inline-block;
     margin-bottom: 25px;
 }
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.modal-dialog {
+    top: 25% !important;
+}
