@@ -19,7 +19,7 @@ def index(request):
             filename = fs.save(myfile.name, myfile)
             uploaded_file_url_find_breed = fs.url(filename)
             context['uploaded_file_url'] = uploaded_file_url_find_breed
-            to_model(uploaded_file_url_find_breed)
+            context = to_model(uploaded_file_url_find_breed, context=context)
 
     # if request.POST and request.FILES.get('findDog',False):
     #     find_dog = request.FILES['findDog']
@@ -42,6 +42,8 @@ def index(request):
 #     return "hello"
 
 
-def to_model(url):
+def to_model(url, context):
     print("hello,world from to_model ", str(os.getcwd() + os.path.abspath(url)))
+    context["popup_active"] = True
+    return context
 # TODO Send image URL to image recognition code
