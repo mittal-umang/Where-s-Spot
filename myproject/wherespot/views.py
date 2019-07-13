@@ -12,8 +12,8 @@ def index(request):
     title = "Where's Spot?"
     context = {'title': title}
     fs = FileSystemStorage()
-    print("request received")
-    print(request.content_params)
+    # print("request received")
+    # print(request.content_params)
 
     if request.POST and request.FILES.get('findBreed', False):
         myfile = request.FILES['findBreed']
