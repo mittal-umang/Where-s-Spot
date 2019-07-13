@@ -43,9 +43,9 @@ def index(request):
 def to_model(url, context):
     # print("hello,world from to_model ", str(os.getcwd() + os.path.abspath(url)))
     actual_path = str(os.getcwd() + os.path.abspath(url))
-    saver = tf.train.Saver()
-    with tf.Session() as sess:
-        saver.restore(sess,'/home/umang.mittal/Where-s-Spot/myproject/wherespot/recon_model.ckpt')
+    # saver = tf.train.Saver()
+    # with tf.Session() as sess:
+    #     saver.restore(sess,'/home/umang.mittal/Where-s-Spot/myproject/wherespot/recon_model.ckpt')
 
     context["popup_active"] = True
 
