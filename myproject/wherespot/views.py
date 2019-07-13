@@ -3,7 +3,8 @@ from django.template import loader
 from django.core.files.storage import FileSystemStorage
 import os
 from google.cloud import storage
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 
 def index(request):
@@ -39,19 +40,16 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-#
-# def to_s3(url):
-#     s3 = boto3.client()
-#     return "hello"
-
-
 def to_model(url, context):
-    print("hello,world from to_model ", str(os.getcwd() + os.path.abspath(url)))
+    # print("hello,world from to_model ", str(os.getcwd() + os.path.abspath(url)))
+    actual_path = str(os.getcwd() + os.path.abspath(url))
+    saver = tf.train.Saver()
+    with tf.Session() as sess:
+        saver.restore(sess,'/home/umang.mittal/Where-s-Spot/myproject/wherespot/recon_model.ckpt')
+
     context["popup_active"] = True
+
     return context
-
-
-# TODO Send image URL to image recognition code
 
 
 def to_cloud(url):
