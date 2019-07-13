@@ -54,7 +54,7 @@ def to_model(url, context):
 
 def to_cloud(url):
     os.environ[
-        "GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/umang.mittal/Desktop/project/UI/Where-s-Spot/myproject/wherespot/credentials.json"
+        "GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/umang.mittal/Where-s-Spot/myproject/wherespot/credentials.json"
     file_name = str(os.getcwd() + os.path.abspath(url))
     storage_client = storage.Client()
     bucket = storage_client.get_bucket('regal-subject-244800.appspot.com')
